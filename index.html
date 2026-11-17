@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>אוליק - צילום מקצועי</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            gold: '#D4AF37',
+                            dark: '#121212',
+                            card: '#1E1E1E'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Heebo', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Heebo', sans-serif; }
+        .smooth-transition { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-brand-dark dark:text-slate-100 smooth-transition min-h-screen flex flex-col">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-40 backdrop-blur-md bg-white/80 dark:bg-brand-dark/80 border-b border-slate-200 dark:border-slate-800 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="text-2xl font-black tracking-wider flex items-center gap-2">
+                <i class="fa-solid me-1 fa-camera text-brand-gold"></i>
+                <span>אוליק <span class="text-xs font-normal text-slate-500 dark:text-slate-400 block">צילום אמנותי</span></span>
+            </a>
+
+            <!-- Navigation Links (Desktop) -->
+            <div class="hidden md:flex items-center gap-8 font-medium">
+                <a href="#gallery" class="hover:text-brand-gold smooth-transition">גלריה</a>
+                <a href="#about" class="hover:text-brand-gold smooth-transition">אודות</a>
+                <a href="#services" class="hover:text-brand-gold smooth-transition">חבילות ושירותים</a>
+                <a href="#contact" class="hover:text-brand-gold smooth-transition">צור קשר</a>
+            </div>
+
+            <!-- Action Controls -->
+            <div class="flex items-center gap-4">
+                <!-- Dark Mode Toggle -->
+                <button id="themeToggle" class="p-2.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-brand-gold dark:hover:text-brand-gold smooth-transition" title="החלף מצב תצוגה">
+                    <i class="fa-solid fa-moon dark:hidden"></i>
+                    <i class="fa-solid fa-sun hidden dark:inline"></i>
+                </button>
+
+                <!-- WhatsApp Quick Link -->
+                <a href="https://wa.me/972500000000" target="_blank" class="hidden sm:inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-xl text-sm font-medium smooth-transition shadow-sm">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>וואטסאפ</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative py-24 px-6 overflow-hidden bg-slate-900 text-white flex items-center justify-center min-h-[70vh]">
+        <div class="absolute inset-0 z-0 opacity-40 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1600&q=80');"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent z-0"></div>
+
+        <div class="relative z-10 max-w-4xl text-center space-y-6">
+            <span class="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide bg-brand-gold/20 text-brand-gold border border-brand-gold/30">
+                צילום מקצועי &bull; פורטרטים &bull; אירועים
+            </span>
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight">
+                תופס את הרגעים היפים ביותר בחיים
+            </h1>
+            <p class="text-lg md:text-xl text-slate-300 font-light max-w-2xl mx-auto">
+                שלום, אני אוליק. מומחה בלכידת רגעים אותנטיים, סיפורים ויזואליים וזיכרונות שיישארו לכל החיים דרך עדשת המצלמה.
+            </p>
+            <div class="pt-4 flex flex-wrap justify-center gap-4">
+                <a href="#gallery" class="bg-brand-gold hover:bg-yellow-600 text-slate-950 font-bold px-8 py-3.5 rounded-xl smooth-transition shadow-lg">
+                    לצפייה בגלריה
+                </a>
+                <a href="#contact" class="bg-white/10 hover:bg-white/20 text-white font-medium px-8 py-3.5 rounded-xl backdrop-blur-md border border-white/20 smooth-transition">
+                    תיאום יום צילומים
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 px-6 max-w-7xl mx-auto w-full flex-grow">
+        <div class="text-center space-y-4 mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold">גלריית עבודות</h2>
+            <p class="text-slate-600 dark:text-slate-400 max-w-lg mx-auto">מבחר מתוך פרויקטים נבחרים בקטגוריות השונות</p>
+
+            <!-- Category Filters -->
+            <div class="flex flex-wrap justify-center gap-2 pt-4">
+                <button class="filter-btn active bg-brand-gold text-slate-950 font-semibold px-5 py-2 rounded-lg text-sm smooth-transition" data-filter="all">הכל</button>
+                <button class="filter-btn bg-slate-200 dark:bg-slate-800 hover:bg-brand-gold/20 text-slate-700 dark:text-slate-300 font-medium px-5 py-2 rounded-lg text-sm smooth-transition" data-filter="portraits">פורטרטים</button>
+                <button class="filter-btn bg-slate-200 dark:bg-slate-800 hover:bg-brand-gold/20 text-slate-700 dark:text-slate-300 font-medium px-5 py-2 rounded-lg text-sm smooth-transition" data-filter="landscapes">נופים</button>
+                <button class="filter-btn bg-slate-200 dark:bg-slate-800 hover:bg-brand-gold/20 text-slate-700 dark:text-slate-300 font-medium px-5 py-2 rounded-lg text-sm smooth-transition" data-filter="events">אירועים</button>
+                <button class="filter-btn bg-slate-200 dark:bg-slate-800 hover:bg-brand-gold/20 text-slate-700 dark:text-slate-300 font-medium px-5 py-2 rounded-lg text-sm smooth-transition" data-filter="fineart">אמנות</button>
+            </div>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div id="galleryGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Item 1 -->
+            <div class="gallery-item portraits relative group overflow-hidden rounded-2xl cursor-pointer bg-slate-800 shadow-md">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" alt="פורטרט" class="w-full h-80 object-cover group-hover:scale-105 smooth-transition">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 smooth-transition p-6 flex flex-col justify-end">
+                    <span class="text-brand-gold text-xs font-semibold">פורטרטים</span>
+                    <h3 class="text-white text-xl font-bold">מבט בודד</h3>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="gallery-item landscapes relative group overflow-hidden rounded-2xl cursor-pointer bg-slate-800 shadow-md">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="נוף" class="w-full h-80 object-cover group-hover:scale-105 smooth-transition">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 smooth-transition p-6 flex flex-col justify-end">
+                    <span class="text-brand-gold text-xs font-semibold">נופים</span>
+                    <h3 class="text-white text-xl font-bold">זריחה בהרים</h3>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="gallery-item events relative group overflow-hidden rounded-2xl cursor-pointer bg-slate-800 shadow-md">
+                <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80" alt="אירועים" class="w-full h-80 object-cover group-hover:scale-105 smooth-transition">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 smooth-transition p-6 flex flex-col justify-end">
+                    <span class="text-brand-gold text-xs font-semibold">אירועים</span>
+                    <h3 class="text-white text-xl font-bold">חתונה בערב</h3>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="gallery-item fineart relative group overflow-hidden rounded-2xl cursor-pointer bg-slate-800 shadow-md">
+                <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=800&q=80" alt="אמנות" class="w-full h-80 object-cover group-hover:scale-105 smooth-transition">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 smooth-transition p-6 flex flex-col justify-end">
+                    <span class="text-brand-gold text-xs font-semibold">אמנות</span>
+                    <h3 class="text-white text-xl font-bold">צבעי הטבע</h3>
+                </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="gallery-item portraits relative group overflow-hidden rounded-2xl cursor-pointer bg-slate-800 shadow-md">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80" alt="פורטרט" class="w-full h-80 object-cover group-hover:scale-105 smooth-transition">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 smooth-transition p-6 flex flex-col justify-end">
+                    <span class="text-brand-gold text-xs font-semibold">פורטרטים</span>
+                    <h3 class="text-white text-xl font-bold">אופי ואור</h3>
+                </div>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="gallery-item landscapes relative group overflow-hidden rounded-2xl cursor-pointer bg-slate-800 shadow-md">
+                <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80" alt="נוף" class="w-full h-80 object-cover group-hover:scale-105 smooth-transition">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 smooth-transition p-6 flex flex-col justify-end">
+                    <span class="text-brand-gold text-xs font-semibold">נופים</span>
+                    <h3 class="text-white text-xl font-bold">שקט של יער</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6 bg-slate-100 dark:bg-slate-900/60 border-y border-slate-200 dark:border-slate-800">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="relative">
+                <img src="https://images.unsplash.com/photo-1554048612-b6a482bc67e5?auto=format&fit=crop&w=800&q=80" alt="אוליק - צלם" class="rounded-2xl shadow-xl w-full object-cover h-[450px]">
+                <div class="absolute -bottom-6 -right-6 bg-brand-gold text-slate-950 p-6 rounded-2xl shadow-lg font-bold hidden sm:block">
+                    <div class="text-3xl">10+</div>
+                    <div class="text-xs">שנות ניסיון בצילום</div>
+                </div>
+            </div>
+            <div class="space-y-6">
+                <span class="text-brand-gold font-bold text-sm tracking-wider">קצת עליי</span>
+                <h2 class="text-3xl md:text-4xl font-bold">נעים להכיר, אני אוליק</h2>
+                <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                    צילום עבורי הוא לא רק מקצוע, אלא הדרך שלי לראות את העולם ולספר סיפורים. במשך העשור האחרון צילמתי מאות אירועים, פורטרטים ופרויקטים מסחריים בארץ ובעולם.
+                </p>
+                <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                    הגישה שלי שמה דגש על תאורה טבעית, נוחות מרבית של המצולמים, ותפיסת רגעים קסומים שקורים באופן ספונטני.
+                </p>
+                <div class="grid grid-cols-2 gap-4 pt-4">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-check text-brand-gold"></i>
+                        <span>ציוד צילום מתקדם</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-check text-brand-gold"></i>
+                        <span>עיבוד תמונות מקצועי</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-check text-brand-gold"></i>
+                        <span>יחס אישי ומסור</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-check text-brand-gold"></i>
+                        <span>אספקה מהירה</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Pricing Section -->
+    <section id="services" class="py-20 px-6 max-w-7xl mx-auto w-full">
+        <div class="text-center space-y-4 mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold">חבילות ושירותים</h2>
+            <p class="text-slate-600 dark:text-slate-400">חבילות צילום מותאמות אישית לצרכים שלך</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Package 1 -->
+            <div class="bg-white dark:bg-brand-card p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-lg flex flex-col justify-between">
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold">צילום פורטרט</h3>
+                    <p class="text-slate-500 text-sm">מתאים לתמונות תדמית, רשתות חברתיות וסבוק</p>
+                    <div class="text-3xl font-extrabold text-brand-gold">₪850</div>
+                    <ul class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold"></i> שעת צילום במיקום נבחר</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold"></i> 15 תמונות מרוטשות ומעובדות</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold"></i> גלריה דיגיטלית בפרטיות</li>
+                    </ul>
+                </div>
+                <a href="#contact" class="mt-8 block text-center bg-slate-900 dark:bg-slate-800 hover:bg-brand-gold hover:text-slate-950 text-white font-medium py-3 rounded-xl smooth-transition">להזמנת חבילה</a>
+            </div>
+
+            <!-- Package 2 (Highlighted) -->
+            <div class="bg-white dark:bg-brand-card p-8 rounded-2xl border-2 border-brand-gold shadow-xl flex flex-col justify-between relative scale-105">
+                <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-gold text-slate-950 text-xs font-bold px-3 py-1 rounded-full">פופולרי ביותר</span>
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold">צילום אירועים קטנים</h3>
+                    <p class="text-slate-500 text-sm">ימי הולדת, בריתות, כנסים ומסיבות פרטיות</p>
+                    <div class="text-3xl font-extrabold text-brand-gold">₪2,200</div>
+                    <ul class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold"></i> עד 4 שעות צילום</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold"></i> כל התמונות באיכות מלאה</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold"></i> 40 תמונות בעריכה מיוחדת</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold"></i> אלבום דיגיטלי מעוצב</li>
+                    </ul>
+                </div>
+                <a href="#contact" class="mt-8 block text-center bg-brand-gold hover:bg-yellow-600 text-slate-950 font-bold py-3 rounded-xl smooth-transition">להזמנת חבילה</a>
+            </div>
+
+            <!-- Package 3 -->
+            <div class="bg-white dark:bg-brand-card p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-lg flex flex-col justify-between">
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold">חבילת פרימיום / חתונות</h3>
+                    <p class="text-slate-500 text-sm">תיעוד מלא ומקיף ליום החתונה</p>
+                    <div class="text-3xl font-extrabold text-brand-gold">₪5,500</div>
+                    <ul class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold"></i> יום צילומים מלא (הכנות עד אירוע)</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold"></i> צלם משני כלול</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold"></i> אלבום פרימיום מודפס</li>
+                    </ul>
+                </div>
+                <a href="#contact" class="mt-8 block text-center bg-slate-900 dark:bg-slate-800 hover:bg-brand-gold hover:text-slate-950 text-white font-medium py-3 rounded-xl smooth-transition">להזמנת חבילה</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6 bg-slate-100 dark:bg-slate-900/60 border-t border-slate-200 dark:border-slate-800">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center space-y-4 mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold">בואו נדבר</h2>
+                <p class="text-slate-600 dark:text-slate-400">רוצים לבדוק זמינות או לשאול שאלה? צרו איתי קשר</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Direct Info -->
+                <div class="space-y-6">
+                    <div class="flex items-center gap-4 p-4 bg-white dark:bg-brand-card rounded-xl border border-slate-200 dark:border-slate-800">
+                        <i class="fa-solid fa-phone text-2xl text-brand-gold"></i>
+                        <div>
+                            <div class="text-xs text-slate-500">טלפון</div>
+                            <div class="font-bold">050-0000000</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 p-4 bg-white dark:bg-brand-card rounded-xl border border-slate-200 dark:border-slate-800">
+                        <i class="fa-solid fa-envelope text-2xl text-brand-gold"></i>
+                        <div>
+                            <div class="text-xs text-slate-500">אימייל</div>
+                            <div class="font-bold">oren@photography.co.il</div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/972500000000" target="_blank" class="flex items-center justify-center gap-3 w-full bg-emerald-600 hover:bg-emerald-700 text-white py-4 rounded-xl font-bold text-lg smooth-transition">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                        <span>שיחה מהירה בוואטסאפ</span>
+                    </a>
+                </div>
+
+                <!-- Contact Form -->
+                <form id="contactForm" class="bg-white dark:bg-brand-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-4">
+                    <div>
+                        <label class="block text-xs font-semibold mb-2">שם מלא</label>
+                        <input type="text" required class="w-full px-4 py-3 rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:outline-none focus:border-brand-gold">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold mb-2">מספר טלפון</label>
+                        <input type="tel" required class="w-full px-4 py-3 rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:outline-none focus:border-brand-gold">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold mb-2">הודעה</label>
+                        <textarea rows="3" required class="w-full px-4 py-3 rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:outline-none focus:border-brand-gold"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-brand-gold hover:bg-yellow-600 text-slate-950 font-bold py-3.5 rounded-xl smooth-transition">שליחת פנייה</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 z-50 bg-black/90 hidden items-center justify-center p-4">
+        <button id="closeLightbox" class="absolute top-6 left-6 text-white text-3xl hover:text-brand-gold">&times;</button>
+        <img id="lightboxImg" src="" class="max-w-full max-h-[85vh] rounded-lg shadow-2xl object-contain">
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center text-xs text-slate-500 border-t border-slate-200 dark:border-slate-800">
+        &copy; 2026 אוליק - צילום מקצועי. כל הזכויות שמורות.
+    </footer>
+
+    <!-- Interactive Script -->
+    <script>
+        // Dark Mode Toggle Logic
+        const themeToggleBtn = document.getElementById('themeToggle');
+        themeToggleBtn.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+        });
+
+        // Gallery Filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-brand-gold', 'text-slate-950', 'active');
+                    b.classList.add('bg-slate-200', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+                });
+                btn.classList.add('bg-brand-gold', 'text-slate-950', 'active');
+
+                const filter = btn.dataset.filter;
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.classList.contains(filter)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Lightbox Popup
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const closeLightbox = document.getElementById('closeLightbox');
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const imgSrc = item.querySelector('img').src;
+                lightboxImg.src = imgSrc;
+                lightbox.classList.remove('hidden');
+                lightbox.classList.add('flex');
+            });
+        });
+
+        closeLightbox.addEventListener('click', () => {
+            lightbox.classList.add('hidden');
+            lightbox.classList.remove('flex');
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.add('hidden');
+                lightbox.classList.remove('flex');
+            }
+        });
+
+        // Form Submit Simulation
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('תודה על פנייתך! אחזור אליך בהקדם.');
+            e.target.reset();
+        });
+    </script>
+</body>
+</html>
